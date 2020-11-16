@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Homework11_1{
 	public static void main(String[] args){
 		/*(The Triangle class)
@@ -11,11 +13,8 @@ public class Homework11_1{
 		the specified side1, side2, and side3.;
 
 		The accessor methods for all three data fields.;
-
 		A method named getArea() that returns the area of this triangle.;
-
 		A method named getPerimeter() that returns the perimeter of this triangle.;
-
 		A method named toString() that returns a string description for the triangle.
 
 		For the formula to compute the area of a triangle,
@@ -27,16 +26,28 @@ public class Homework11_1{
 		Write a test program that prompts the user to enter three sides of the triangle, a color, and a Boolean value to indicate whether the triangle is filled.
 		The program should create a Triangle object with these sides and set the color and filled properties using the input.
 		The program should display the area, perimeter, color, and true or false to indicate whether it is filled or not.*/
+
+		Scanner input = new Scanner(System.in);
+
 		double area;
 		double perimeter;
+		boolean filled;
+		String color;
 		String description;
 
 		Triangle triangle = new Triangle();
 
-		area = triangle.getArea();
-		perimeter = triangle.getPerimeter();
-		description = triangle.toString(area, perimeter);
+		triangle.setColor(input);
+		triangle.setFilled(input);
+		triangle.getUserInputs(input);
+//		triangle = new Triangle(7.0, 8.0, 9.0);
 
-		System.out.println("Hello");
+		triangle.getPerimeter();
+		triangle.getArea();
+		description = triangle.toString();
+		description += triangle.toStringTwo();
+
+		System.out.println(description);
+		triangle.toString();
 	}
 }
