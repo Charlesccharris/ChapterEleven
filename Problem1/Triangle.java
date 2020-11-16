@@ -1,3 +1,6 @@
+import java.lang.Math;
+import java.util.Scanner;
+
 public class Triangle extends GeometricObject{
 /*   	Design a class named Triangle that extends GeometricObject.
       	The class contains:
@@ -14,44 +17,66 @@ public class Triangle extends GeometricObject{
      	A method named toString() that returns a string description for the triangle.
 */
 
-/*	-----------------------
-		Triangle
-	-----------------------
+/*	--------------------------------------
+		       Triangle
+	--------------------------------------
 	-side1: double
 	-side2: double
 	-side3: double
-	-----------------------
+	-area: double
+	-perimeter: double
+	--------------------------------------
 	+Triangle()
-	+getArea(): double
-	+getPerimeter(): double
-	+toString(area: double,
-	perimeter: double): String
-	-----------------------
-}*/
+	+getUserInputs(input: Scanner): void
+	+getPerimeter(): void
+	+getArea(): void
+	+toString(): String
+	--------------------------------------
+*/
 
-	private double side1 = 1.0;
-	private double side2 = 1.0;
-	private double side3 = 1.0;
+	private double side1;
+	private double side2;
+	private double side3;
+	private double area;
+	private double perimeter;
 
-	Triangle(){
-
+	public Triangle(){
+		this.side1 = 1.0;
+		this.side2 = 1.0;
+		this.side3 = 1.0;
 	}
 
-	public double getArea(){
-		double newArea = 1.5;
-
-		return newArea;
+	public void getUserInputs(Scanner input){
+		System.out.print("Enter number for side one: ");
+		this.side1 = input.nextDouble();
+		System.out.print("Enter number for side two: ");
+		this.side2 = input.nextDouble();
+		System.out.print("Enter number for side three: ");
+		this.side3 = input.nextDouble();
 	}
 
-	public double getPerimeter(){
-		double newPerimeter = 2.0;
-
-		return newPerimeter;
+	public void getPerimeter(){
+		double newPerimeter = side1 + side2 + side3;
+		this.perimeter = newPerimeter;
 	}
 
-	public String toString(double area, double perimeter){
-		String description = "Triangle with area: " + area + " and perimeter: " + perimeter;
+	public void getArea(){
+		double p = perimeter/2;
+		double a = side1;
+		double b = side2;
+		double c = side3;
+		double partOne = p - a;
+		double partTwo = p - b;
+		double partThree = p - c;
+		double whole = p * partOne * partTwo * partThree;
+		double newArea = Math.sqrt(whole);
+		this.area = newArea;
+	}
 
+	public String toStringTwo(){
+		String description = "Triangle: side1 = " + side1 + " side2 = "
+		+ side2 + " side3 = " + side3 + "\nArea: " + area +
+		"\nPerimeter: " + perimeter;
 		return description;
 	}
 }
