@@ -20,7 +20,6 @@ public class GeometricObject{
 	+toString(): String
 	-----------------------------------
 */
-
 	private String color = "White";
 	private boolean filled;
 	private java.util.Date dateCreated;
@@ -29,9 +28,9 @@ public class GeometricObject{
 		dateCreated = new java.util.Date();
 	}
 
-	public GeometricObject(String color, boolean filled){
+	public GeometricObject(String newColor, boolean filled){
 		dateCreated = new java.util.Date();
-		this.color = color;
+		this.color = newColor;
 		this.filled = filled;
 	}
 
@@ -39,16 +38,23 @@ public class GeometricObject{
 		return color;
 	}
 
-	public void setColor(String color){
-		this.color = color;
+	public void setColor(Scanner input){
+		System.out.print("Enter the color of the shape: ");
+		String newColor = input.next();
+		this.color = newColor;
 	}
 
 	public boolean isFilled(){
 		return filled;
 	}
 
-	public boolean setFilled(boolean filled){
-		this.filled = filled;
+	public void setFilled(Scanner input){
+		System.out.print("Is the object filled or not(Y/N): ");
+		char answer = input.next().charAt(0);
+		if(answer == 'Y' || answer == 'y')
+			this.filled = true;
+		else
+			this.filled = false;
 	}
 
 	public java.util.Date getDateCreated(){
@@ -56,7 +62,7 @@ public class GeometricObject{
 	}
 
 	public String toString(){
-		return "created on " + dateCreated + "\ncolor: " + color +
-		" and filled: " + filled;
+		return "Created on " + dateCreated + "\nColor: " + color +
+		" Filled: " + filled + "\n";
 	}
 }
