@@ -39,15 +39,14 @@ public class Homework11_1{
 
 		triangle.setColor(input);
 		triangle.setFilled(input);
-		triangle.getUserInputs(input);
-//		triangle = new Triangle(7.0, 8.0, 9.0);
 
+		triangle.getUserInputs(input);
 		triangle.getPerimeter();
 		triangle.getArea();
+
 		description = triangle.toString();
 		description += triangle.toStringTwo();
 
 		System.out.println(description);
-		triangle.toString();
 	}
 }
