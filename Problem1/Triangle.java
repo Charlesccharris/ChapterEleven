@@ -34,11 +34,11 @@ public class Triangle extends GeometricObject{
 	--------------------------------------
 */
 
-	private double side1;
-	private double side2;
-	private double side3;
-	private double area;
-	private double perimeter;
+	private double side1 = 0;
+	private double side2 = 0;
+	private double side3 = 0;
+	private double area = 0;
+	private double perimeter = 0;
 
 	public Triangle(){
 		this.side1 = 1.0;
@@ -65,6 +65,7 @@ public class Triangle extends GeometricObject{
 		double a = side1;
 		double b = side2;
 		double c = side3;
+
 		double partOne = p - a;
 		double partTwo = p - b;
 		double partThree = p - c;
@@ -75,7 +76,7 @@ public class Triangle extends GeometricObject{
 
 	public String toStringTwo(){
 		String description = "Triangle: side1 = " + side1 + " side2 = "
-		+ side2 + " side3 = " + side3 + "\nArea: " + area +
+		+ side2 + " side3 = " + side3 + "\nArea: " + this.area +
 		"\nPerimeter: " + perimeter;
 		return description;
 	}

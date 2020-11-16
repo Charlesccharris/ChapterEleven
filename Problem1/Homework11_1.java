@@ -29,9 +29,6 @@ public class Homework11_1{
 
 		Scanner input = new Scanner(System.in);
 
-		double area;
-		double perimeter;
-		boolean filled;
 		String color;
 		String description;
 
